@@ -13,7 +13,6 @@ def usage():
     print("Usage: python3 ip_locate.py IP_ADDRESS")
 
 def locate(addr):
-    #if re.findall('(\d{1,3}\.){3}\d{1,3}', addr):
     page = urllib.request.urlopen('http://wap.ip138.com/ip.asp?ip=%s' % addr)
     content = page.read().decode('utf8')
     res = re.findall(r"<br/><b>查询结果：(.*)</b><br/>", content)
